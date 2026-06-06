@@ -22,10 +22,28 @@
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
+        
+        /* Basis-Styling für die Überschrift */
         h1 {
-            color: #db2777;
             margin-bottom: 5px;
+            font-size: 2.5em; /* Etwas größer für bessere Lesbarkeit */
         }
+
+        /* Dein Name in Lavendel-Violett */
+        .name-steven {
+            color: #9370DB; /* MediumPurple/Lavendel */
+        }
+
+        /* Das "&" Zeichen in der alten Farbe lassen */
+        .ampersand {
+            color: #db2777; /* Original Pink */
+        }
+
+        /* Ihr Name in Sonnenblumen-Gelb */
+        .name-anna {
+            color: #FFD700; /* Gold/Sonnenblumengelb für guten Kontrast */
+        }
+
         h2 {
             font-size: 1.1em;
             color: #666;
@@ -50,7 +68,12 @@
 <body>
 
     <div class="container">
-        <h1>Steven & Anna</h1>
+        <!-- Hier habe ich die Namen angepasst, damit sie unterschiedlich farbig sind -->
+        <h1>
+            <span class="name-steven">Steven</span> 
+            <span class="ampersand">&</span> 
+            <span class="name-anna">Anna</span>
+        </h1>
         <h2>Seit unserem ersten Treffen ist so viel Zeit vergangen:</h2>
         
         <div id="timer">Berechne Zeit...</div>
@@ -64,19 +87,15 @@
             const now = new Date();
             const difference = now - startDate;
 
-            // Zuerst die gesamten Tage berechnen
             const totalDays = Math.floor(difference / (1000 * 60 * 60 * 24));
             
-            // Davon die Jahre und die restlichen Tage ableiten (mit 365.25 wegen Schaltjahren)
             const years = Math.floor(totalDays / 365.25);
             const days = Math.floor(totalDays % 365.25);
             
-            // Stunden, Minuten, Sekunden wie bisher
             const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
             const minutes = Math.floor((difference / 1000 / 60) % 60);
             const seconds = Math.floor((difference / 1000) % 60);
 
-            // Alles zusammenbauen
             document.getElementById('timer').innerHTML = 
                 years + "<span class='label'>Jahre</span><br>" +
                 days + "<span class='label'>Tage</span><br>" +
