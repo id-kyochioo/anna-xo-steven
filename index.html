@@ -12,15 +12,15 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #121212; /* Sehr dunkler Hintergrund für die gesamte Seite */
+            background-color: #121212; 
             color: #e0e0e0;
             text-align: center;
         }
         .container {
-            background: #1e1e1e; /* Etwas helleres Dunkelgrau für die Box */
+            background: #1e1e1e; 
             padding: 40px 60px;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Dunklerer Schatten */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
         }
         
         h1 {
@@ -33,9 +33,9 @@
             color: #b39ddb; 
         }
 
-        /* Das "&" Zeichen in einem passenden hellen Pink */
+        /* Das "&" Zeichen jetzt in Schwarz */
         .ampersand {
-            color: #f472b6; 
+            color: #000000; 
         }
 
         /* Ihr Name in strahlendem Sonnenblumen-Gelb */
@@ -45,7 +45,7 @@
 
         h2 {
             font-size: 1.1em;
-            color: #aaaaaa; /* Helles Grau für den Untertitel */
+            color: #aaaaaa; 
             margin-bottom: 30px;
             font-weight: normal;
         }
@@ -54,12 +54,12 @@
             font-size: 1.8em;
             font-weight: bold;
             line-height: 1.6;
-            color: #ffffff; /* Weiße Zahlen für maximalen Kontrast */
+            color: #ffffff; 
         }
         
         .label {
             font-size: 0.5em;
-            color: #aaaaaa; /* Helles Grau für die Beschriftungen (Tage, Stunden etc.) */
+            color: #aaaaaa; 
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-left: 5px;
@@ -90,23 +90,4 @@
             const totalDays = Math.floor(difference / (1000 * 60 * 60 * 24));
             
             const years = Math.floor(totalDays / 365.25);
-            const days = Math.floor(totalDays % 365.25);
-            
-            const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
-            const minutes = Math.floor((difference / 1000 / 60) % 60);
-            const seconds = Math.floor((difference / 1000) % 60);
-
-            document.getElementById('timer').innerHTML = 
-                years + "<span class='label'>Jahre</span><br>" +
-                days + "<span class='label'>Tage</span><br>" +
-                hours + "<span class='label'>Stunden</span><br>" +
-                minutes + "<span class='label'>Minuten</span><br>" +
-                seconds + "<span class='label'>Sekunden</span>";
-        }
-
-        updateTimer();
-        setInterval(updateTimer, 1000);
-    </script>
-
-</body>
-</html>
+            const days = Math.floor(totalDays % 365.25
