@@ -58,19 +58,27 @@
 
     <script>
         // Startdatum: 23. Juni 2023 um 22:23 Uhr
-        // WICHTIG in JavaScript: Juni = 5 (da die Monate bei 0 anfangen)
         const startDate = new Date(2023, 5, 23, 22, 23, 0); 
 
         function updateTimer() {
             const now = new Date();
             const difference = now - startDate;
 
-            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            // Zuerst die gesamten Tage berechnen
+            const totalDays = Math.floor(difference / (1000 * 60 * 60 * 24));
+            
+            // Davon die Jahre und die restlichen Tage ableiten (mit 365.25 wegen Schaltjahren)
+            const years = Math.floor(totalDays / 365.25);
+            const days = Math.floor(totalDays % 365.25);
+            
+            // Stunden, Minuten, Sekunden wie bisher
             const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
             const minutes = Math.floor((difference / 1000 / 60) % 60);
             const seconds = Math.floor((difference / 1000) % 60);
 
+            // Alles zusammenbauen
             document.getElementById('timer').innerHTML = 
+                years + "<span class='label'>Jahre</span><br>" +
                 days + "<span class='label'>Tage</span><br>" +
                 hours + "<span class='label'>Stunden</span><br>" +
                 minutes + "<span class='label'>Minuten</span><br>" +
