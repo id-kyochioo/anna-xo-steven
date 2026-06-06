@@ -1,3 +1,10 @@
+Na klar, ein edler „Dark Mode“ sieht extrem modern aus und lässt die farbigen Namen richtig schön leuchten!
+
+Ich habe das Design komplett umgestellt: Der Hintergrund ist jetzt in einem eleganten Dunkelgrau gehalten, die Box setzt sich leicht davon ab, und die Zahlen sowie Texte sind strahlend weiß und hellgrau, damit alles perfekt lesbar bleibt. Das helle Lavendel und das Sonnenblumengelb kommen auf dem dunklen Hintergrund jetzt sogar noch besser zur Geltung.
+
+Hier ist der neue Code für deine index.html:
+
+HTML
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -12,53 +19,54 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #fdf2f8;
-            color: #333;
+            background-color: #121212; /* Sehr dunkler Hintergrund für die gesamte Seite */
+            color: #e0e0e0;
             text-align: center;
         }
         .container {
-            background: white;
+            background: #1e1e1e; /* Etwas helleres Dunkelgrau für die Box */
             padding: 40px 60px;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Dunklerer Schatten */
         }
         
-        /* Basis-Styling für die Überschrift */
         h1 {
             margin-bottom: 5px;
-            font-size: 2.5em; /* Etwas größer für bessere Lesbarkeit */
+            font-size: 2.5em;
         }
 
-        /* Dein Name in Lavendel-Violett */
+        /* Dein Name in hellem Lavendel-Ton */
         .name-steven {
-            color: #9370DB; /* MediumPurple/Lavendel */
+            color: #b39ddb; 
         }
 
-        /* Das "&" Zeichen in der alten Farbe lassen */
+        /* Das "&" Zeichen in einem passenden hellen Pink */
         .ampersand {
-            color: #db2777; /* Original Pink */
+            color: #f472b6; 
         }
 
-        /* Ihr Name in Sonnenblumen-Gelb */
+        /* Ihr Name in strahlendem Sonnenblumen-Gelb */
         .name-anna {
-            color: #FFD700; /* Gold/Sonnenblumengelb für guten Kontrast */
+            color: #FFD700; 
         }
 
         h2 {
             font-size: 1.1em;
-            color: #666;
+            color: #aaaaaa; /* Helles Grau für den Untertitel */
             margin-bottom: 30px;
             font-weight: normal;
         }
+        
         #timer {
             font-size: 1.8em;
             font-weight: bold;
             line-height: 1.6;
-            color: #111;
+            color: #ffffff; /* Weiße Zahlen für maximalen Kontrast */
         }
+        
         .label {
             font-size: 0.5em;
-            color: #888;
+            color: #aaaaaa; /* Helles Grau für die Beschriftungen (Tage, Stunden etc.) */
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-left: 5px;
@@ -68,7 +76,6 @@
 <body>
 
     <div class="container">
-        <!-- Hier habe ich die Namen angepasst, damit sie unterschiedlich farbig sind -->
         <h1>
             <span class="name-steven">Steven</span> 
             <span class="ampersand">&</span> 
