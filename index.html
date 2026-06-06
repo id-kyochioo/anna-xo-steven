@@ -33,9 +33,9 @@
             color: #b39ddb; 
         }
 
-        /* Das "&" Zeichen jetzt in Schwarz */
+        /* Das "&" Zeichen in der gleichen Farbe wie der Untertitel */
         .ampersand {
-            color: #000000; 
+            color: #aaaaaa; 
         }
 
         /* Ihr Name in strahlendem Sonnenblumen-Gelb */
@@ -90,4 +90,23 @@
             const totalDays = Math.floor(difference / (1000 * 60 * 60 * 24));
             
             const years = Math.floor(totalDays / 365.25);
-            const days = Math.floor(totalDays % 365.25
+            const days = Math.floor(totalDays % 365.25);
+            
+            const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((difference / 1000 / 60) % 60);
+            const seconds = Math.floor((difference / 1000) % 60);
+
+            document.getElementById('timer').innerHTML = 
+                years + "<span class='label'>Jahre</span><br>" +
+                days + "<span class='label'>Tage</span><br>" +
+                hours + "<span class='label'>Stunden</span><br>" +
+                minutes + "<span class='label'>Minuten</span><br>" +
+                seconds + "<span class='label'>Sekunden</span>";
+        }
+
+        updateTimer();
+        setInterval(updateTimer, 1000);
+    </script>
+
+</body>
+</html>
